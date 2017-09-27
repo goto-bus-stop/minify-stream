@@ -23,7 +23,23 @@ npm install minify-stream
 
 ```js
 var minifyStream = require('minify-stream')
+
+fs.createReadStream('app.js')
+  .pipe(minifyStream())
+  .pipe(fs.createWriteStream('app.min.js'))
 ```
+
+## API
+
+### `minifyStream(?options)`
+
+Create a new minify stream. Write a Javascript file or bundle to it.
+Possible `options` are:
+
+ - `uglify` - An uglify module to use, defaults to [`uglify-es`](https://npmjs.com/package/uglify-es).
+   It must have an uglify-compatible `minify()` function.
+ - All other options are passed to the `minify()` function as the second parameter.
+   See the [uglify-es docs](https://github.com/mishoo/uglifyjs2#minify-options) for available options.
 
 ## License
 
