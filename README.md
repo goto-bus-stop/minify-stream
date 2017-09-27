@@ -41,6 +41,14 @@ Possible `options` are:
  - All other options are passed to the `minify()` function as the second parameter.
    See the [uglify-es docs](https://github.com/mishoo/uglifyjs2#minify-options) for available options.
 
+`minify-stream` adds inline source maps by default. Use [`exorcist`](https://npmjs.com/package/exorcist)
+to extract source maps from the output stream into a separate file. If you don't need source maps, pass
+the `sourceMap: false` option to disable them.
+
+```js
+minifyStream({ sourceMap: false })
+```
+
 ## License
 
 [MIT](LICENSE.md)

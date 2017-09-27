@@ -2,11 +2,19 @@ var duplexify = require('duplexify')
 var concat = require('concat-stream')
 var fromString = require('from2-string')
 var defaultUglify = require('uglify-es')
+var convert = require('convert-source-map')
+var xtend = require('xtend')
 
 module.exports = uglifyStream
 
+function defaultOpts () {
+  return {
+    sourceMap: { content: 'inline' }
+  }
+}
+
 function uglifyStream (opts) {
-  opts = opts || {}
+  opts = xtend(defaultOpts(), opts || {})
   var uglify = opts.uglify || defaultUglify
   delete opts.uglify
 
@@ -18,7 +26,11 @@ function uglifyStream (opts) {
       stream.emit('error', minified.error)
       return
     }
-    var reader = fromString(minified.code)
+    var final = minified.code
+    if (minified.map) {
+      final += '\n' + convert.fromJSON(minified.map).toComment()
+    }
+    var reader = fromString(final)
     stream.setReadable(reader)
   })
 
