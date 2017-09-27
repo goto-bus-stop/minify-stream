@@ -1,0 +1,36 @@
+{
+  "name": "minify-stream",
+  "description": "minify javascript in a stream using uglify-js",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/minify-stream/issues"
+  },
+  "devDependencies": {
+    "dedent": "^0.7.0",
+    "standard": "*",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/minify-stream",
+  "keywords": [
+    "minify",
+    "stream",
+    "uglify-js"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/minify-stream.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js | tap-spec"
+  },
+  "dependencies": {
+    "concat-stream": "^1.6.0",
+    "duplexify": "^3.5.1",
+    "from2-string": "^1.1.0",
+    "uglify-es": "^3.1.2"
+  }
+}
