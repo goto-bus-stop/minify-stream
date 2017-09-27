@@ -7,4 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-* engage
+## 1.0.0
+### Added
+
+ * Initial release
