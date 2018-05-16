@@ -1,7 +1,7 @@
 var duplexify = require('duplexify')
 var concat = require('concat-stream')
 var fromString = require('from2-string')
-var defaultUglify = require('uglify-es')
+var defaultUglify = require('@fabiosantoscode/uglify-es')
 var convert = require('convert-source-map')
 var xtend = require('xtend')
 
