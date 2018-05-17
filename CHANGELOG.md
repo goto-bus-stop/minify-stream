@@ -2,17 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## 1.2.0
+* Switch to [terser](https://github.com/fabiosantoscode/terser) as the default uglify module. ([#1](https://github.com/goto-bus-stop/minify-stream/pull/1))
 
 ## 1.1.0
-### Added
-
- * Now outputs sourcemaps by default
+* Now outputs sourcemaps by default
 
 ## 1.0.0
-### Added
-
- * Initial release
+* Initial release
