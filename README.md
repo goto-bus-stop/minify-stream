@@ -36,10 +36,10 @@ fs.createReadStream('app.js')
 Create a new minify stream. Write a Javascript file or bundle to it.
 Possible `options` are:
 
- - `uglify` - An uglify module to use, defaults to [`uglify-es`](https://npmjs.com/package/uglify-es).
+ - `uglify` - An uglify module to use, defaults to [`terser`](https://npmjs.com/package/terser).
    It must have an uglify-compatible `minify()` function.
  - All other options are passed to the `minify()` function as the second parameter.
-   See the [uglify-es docs](https://github.com/mishoo/uglifyjs2#minify-options) for available options.
+   See the [terser docs](https://github.com/fabiosantoscode/terser#minify-options) for available options.
 
 `minify-stream` adds inline source maps by default. Use [`exorcist`](https://npmjs.com/package/exorcist)
 to extract source maps from the output stream into a separate file. If you don't need source maps, pass
