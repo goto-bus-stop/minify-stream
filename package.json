@@ -8,9 +8,9 @@
   },
   "devDependencies": {
     "dedent": "^0.7.0",
-    "pump": "^1.0.2",
+    "pump": "^3.0.0",
     "standard": "*",
-    "tap-spec": "^4.0.2",
+    "tap-spec": "^5.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/goto-bus-stop/minify-stream",
@@ -29,9 +29,9 @@
     "test": "standard && tape test/*.js | tap-spec"
   },
   "dependencies": {
-    "concat-stream": "^1.6.0",
+    "concat-stream": "^2.0.0",
     "convert-source-map": "^1.5.0",
-    "duplexify": "^3.5.1",
+    "duplexify": "^4.1.1",
     "from2-string": "^1.1.0",
     "terser": "^3.7.5",
     "xtend": "^4.0.1"
