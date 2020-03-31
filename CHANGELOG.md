@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0
+* Upgrade default terser version to v4.
+
 ## 1.2.1
 * Pin terser to a version that does uses ES5 syntax.
 * Update streams dependencies.
