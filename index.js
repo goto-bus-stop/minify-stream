@@ -21,17 +21,24 @@ function uglifyStream (opts) {
   var stream = duplexify()
 
   var writer = concat({ encoding: 'string' }, function (source) {
-    var minified = uglify.minify(source, opts)
-    if (minified.error) {
-      stream.emit('error', minified.error)
-      return
+    var result = uglify.minify(source, opts)
+    if (result.then) {
+      result.then(onsuccess, onerror)
+    } else if (result.error) {
+      return onerror(result.error)
+    } else onsuccess(result)
+
+    function onsuccess (minified) {
+      var final = minified.code
+      if (minified.map) {
+        final += '\n' + convert.fromJSON(minified.map).toComment()
+      }
+      var reader = fromString(final)
+      stream.setReadable(reader)
     }
-    var final = minified.code
-    if (minified.map) {
-      final += '\n' + convert.fromJSON(minified.map).toComment()
+    function onerror (error) {
+      stream.emit('error', error)
     }
-    var reader = fromString(final)
-    stream.setReadable(reader)
   })
 
   stream.setWritable(writer)
