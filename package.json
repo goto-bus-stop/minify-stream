@@ -11,7 +11,7 @@
     "convert-source-map": "^1.5.0",
     "duplexify": "^4.1.1",
     "from2-string": "^1.1.0",
-    "terser": "^4.7.0",
+    "terser": "^5.2.1",
     "xtend": "^4.0.1"
   },
   "devDependencies": {
